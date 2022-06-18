@@ -6,5 +6,5 @@ Use Run.sh in Linux to run it on a 5 min repeat, aprs.bat in windows with Anacon
 
 It also includes a fake altitude setting which will get it automaticly imported to habhub from aprs.fi map, this mod is made by Ben PE2BZ
 
-edit this in line 224
+edit this in line 124  -  strAltitude  = '040683'   # Fake altitude in feet with leading 0   -
 

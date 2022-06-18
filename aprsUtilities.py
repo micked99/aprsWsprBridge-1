@@ -101,7 +101,7 @@ function to upload a data packet to aprs.fi netowrk
 """
 #def AprsSendPacket(aspStrCallSign, apsStrAprsMessage):
 
-def AprsSendPacket(aspStrUserCallsign, aspStrBalloonCAllSign, aspStrLatitude, aspStrLongitude, aspStrIcon, aspStrData):
+def AprsSendPacket(aspStrUserCallsign, aspStrBalloonCAllSign, aspStrLatitude, aspStrLongitude,  aspStrIcon, aspStrAltitude):
 
 	serverHost = 'second.aprs.net'
 	serverPort = 10152
@@ -139,7 +139,7 @@ def AprsSendPacket(aspStrUserCallsign, aspStrBalloonCAllSign, aspStrLatitude, as
 
 		# AprsSendPacket(aspStrUserCallsign, aspStrBalloonCAllSign, aspStrLatitude, aspStrLongitude, aspStrIcon, aspStrData):
 
-		aspStrAprsMessage = aspStrBalloonCAllSign + '>APRS,TCIP*:=' + aspStrLatitude + '/' + aspStrLongitude + aspStrIcon + aspStrData + '\n'
+		aspStrAprsMessage = aspStrBalloonCAllSign + '>APRS,TCIP*:=' + aspStrLatitude + '/' + aspStrLongitude + aspStrIcon + '/A=' + aspStrAltitude + '\n'
 
 		# log packet to be sent
 		with open("log.txt", "a") as log_file:

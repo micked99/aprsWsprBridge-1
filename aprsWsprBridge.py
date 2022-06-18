@@ -53,6 +53,7 @@ from getLastAprsPositionTime import *
 
 #------------------------ starts here -----------------------------#
 
+
 with open( "log.txt", "a" ) as log_file:
     log_file.write( time.ctime() + " :#----------------------------------------------------------------------------------------------------------------------------------\n" )
 
@@ -63,12 +64,12 @@ else :
 	with open( "log.txt", "a" ) as log_file:
 		log_file.write( time.ctime() + " : Cleared to continue\n" )
 
-strUserCallSign = 'your callsign - the one who will be uploading the spot to APRS'
-aprsApiKey = 'your aprs api key see: https://aprs.fi/page/api you will need to create and account and you will find your key here: https://aprs.fi/account/'
+strUserCallSign = 'SA6BSS'
+aprsApiKey = 'xxxxxxxxxxxxxxxxxxxxxxxxxx' 
 
-strWsprCallSign = 'callsign of the wspr target'
+strWsprCallSign = 'SA6BSS'
 
-strBalloonCallSign = 'callsign you want your balloon to appear as on APRS i.e. W1XXX-12'
+strBalloonCallSign = 'BSS43'
 
 strIcon = 'O'                                        # balloon
 
@@ -120,12 +121,13 @@ if wsprSpotTimeStamp > lastAprsPositionTimeStamp + 15 :
 
 	strLatitude  = toDegreesMinutes( latitudeLongitude[0], 'Latitude' )
 	strLongitude = toDegreesMinutes( latitudeLongitude[1], 'Longitude' )
-
+	strAltitude  = '040683'   # Fake altitude in feet with leading 0
+	
 	# save the spot for posterity
 	with open( "wspr_spotsLog.txt", "a" ) as spotsLog_file:
 		spotsLog_file.write( time.ctime() + " : %s \n" % wsprSpot )
 
-	AprsSendPacket(strUserCallSign, strBalloonCallSign, strLatitude, strLongitude, strIcon, wsprSpot)
+	AprsSendPacket(strUserCallSign, strBalloonCallSign, strLatitude, strLongitude, strIcon, strAltitude )
 
 else:
 	with open( 'log.txt', 'a' ) as log_file:
@@ -136,7 +138,8 @@ else:
 # last line for this log entry
 with open( "log.txt", "a" ) as log_file:
     log_file.write( time.ctime() + " :#----------------------------------------------------------------------------------------------------------------------------------\n" )
+time.sleep(15)
 
-sys.exit( 1 )
+#sys.exit( 1 )
 
 # ------------------------------------------------------- That's all Folks!!!! ------------------------------------------------

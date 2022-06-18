@@ -52,7 +52,7 @@ def getWspr( gwStrCallsign ):
 	with open("log.txt", "a") as log_file:
 		log_file.write( time.ctime() + " : getWspr start\n" )
 
-	url = 'http://wsprnet.org/olddb?mode=html&band=all&limit=50&findcall=' + gwStrCallsign + '&findreporter=&sort=date'
+	url = 'https://www.wsprnet.org/olddb?mode=html&band=20&limit=50&findcall=' + gwStrCallsign + '&findreporter=&sort=date'
 
 
 	try:

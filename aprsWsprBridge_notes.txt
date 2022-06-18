@@ -24,7 +24,7 @@ aprsWsprBridge_notes.txt   - 2020-03-02
 #==============================================================================================================#
 # if not already installled, use pip to install the following
 #
-#    pip install beautifulsoup
+#    pip install beautifulsoup4
 #    pip install bs4
 #    pip install lxml
 #    pip install pandas
@@ -57,7 +57,7 @@ Specifically in these place near the top of the file:
 
 strUserCallSign = 'your callsign - the one who will be uploading the spot to APRS and has created and account on aprs.fi and has an aprs api key'
 
-aprsApiKey = 'your aprs api key see: https://aprs.fi/page/api you will need to create and account and you will find your key here: https://aprs.fi/account/'
+aprsApiKey = 'your aprs api key see: https://aprs.fi/page/api you will need to create and account and you will find your key here: "https://aprs.fi/account/"
 
 strWsprCallSign = 'callsign of the wspr target i.e. W1XXX'
 

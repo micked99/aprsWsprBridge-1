@@ -1,4 +1,4 @@
-# aprsWsprBridge forked from https://github.com/ve3gtc/aprsWsprBridge
+# AprsWsprBridge forked from https://github.com/ve3gtc/aprsWsprBridge
 
 Simple python script(s) to collect wspr spots from wsprnet.org and upload a position report to aprs.fi
 
